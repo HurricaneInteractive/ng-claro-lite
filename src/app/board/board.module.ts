@@ -7,10 +7,11 @@ import { BoardItemComponent } from './board-item/board-item.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ListItemComponent } from './list-item/list-item.component';
 
 
 @NgModule({
-  declarations: [BoardListComponent, BoardItemComponent],
+  declarations: [BoardListComponent, BoardItemComponent, ListItemComponent],
   imports: [
     CommonModule,
     BoardRoutingModule,
