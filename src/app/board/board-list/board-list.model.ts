@@ -11,3 +11,10 @@ export interface BoardItem {
   dayIdx: number
   boardDate: BoardDate
 }
+
+export interface BoardData {
+  id?: string
+  title: string
+  completed: boolean
+  highlight: string
+}

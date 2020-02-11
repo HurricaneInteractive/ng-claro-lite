@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class BoardListComponent implements OnInit {
   boardStructure: BoardItem[] = [];
+  boardData;
   loading: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -28,9 +29,12 @@ export class BoardListComponent implements OnInit {
 
     for (let i = 0; i < 5; i++) {
       const date = addDays(startOfTheWeek, i);
+      const dayIdx = getDayOfYear(date)
+      const dayYear = getYear(date)
+
       this.boardStructure.push({
-        dayIdx: getDayOfYear(date),
-        dayYear: getYear(date),
+        dayIdx,
+        dayYear,
         boardDate: this.getDateFormats(date)
       });
     }
