@@ -1,6 +1,7 @@
 <div class="shell-wrapper">
   <header>
     <a routerLink="/" class="logo"></a>
+    <a (click)="signOut($event)" *ngIf="afAuth.authState | async" href="#">Sign out</a>
   </header>
   <main>
     <ng-content></ng-content>

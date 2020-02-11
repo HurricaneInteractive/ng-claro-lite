@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BoardDate, BoardItem } from "./board-list.model"
 import { format, startOfWeek, addDays, isPast, isToday, isFuture, getDayOfYear, getYear } from 'date-fns'
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-board-list',
@@ -13,13 +13,12 @@ export class BoardListComponent implements OnInit {
   boardStructure: BoardItem[] = [];
   loading: boolean = true;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
-    const user = await this.afAuth.auth.currentUser
-    const isLoggedIn = !!user
-    if (!isLoggedIn) {
-      this.router.navigateByUrl("/")
+    const user = await this.authService.isLoggedIn()
+    if (!user) {
+      this.router.navigate([""])
     }
 
     const today = new Date()
