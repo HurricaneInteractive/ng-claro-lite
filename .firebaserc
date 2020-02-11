@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angulardev-316ff": {
+      "hosting": {
+        "claro": [
+          "angulardev-316ff"
+        ]
+      }
+    }
+  }
+}

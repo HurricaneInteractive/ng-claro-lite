@@ -1,0 +1,18 @@
+.shell-wrapper {
+  padding: 20px 20px;
+  height: 100%;
+  box-sizing: border-box;
+  header {
+    margin-bottom: 60px;
+    .logo {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 7px solid black;
+      border-radius: 50%;
+    }
+  }
+  main {
+    padding: 0 40px;
+  }
+}

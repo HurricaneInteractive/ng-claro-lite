@@ -1,0 +1,7 @@
+<div class="board-list-grid" *ngIf="!loading">
+  <app-board-item *ngFor="let item of boardStructure;" [boardItem]="item"></app-board-item>
+</div>
+
+<div class="board-list-loading" *ngIf="loading">
+  <mat-progress-spinner [diameter]="50" mode="indeterminate" color="accent"></mat-progress-spinner>
+</div>

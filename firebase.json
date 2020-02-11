@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "claro",
+      "public": "dist/claro",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

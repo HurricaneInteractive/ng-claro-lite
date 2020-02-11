@@ -1,0 +1,21 @@
+<div
+  class="board-list-item"
+  [ngClass]="{
+    'past': isPast,
+    'future': isFuture,
+    'current': isCurrent
+  }"
+>
+  <div class="item-header">
+    <h3>
+      {{ weekday }}
+      <sup>{{ date }}</sup>
+    </h3>
+  </div>
+
+  <div class="item-footer" *ngIf="!isPast">
+    <button mat-icon-button aria-label="Add new item">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
